@@ -24,9 +24,10 @@ class Movie {
     }
 
 
-    function __construct($_name , $_author, int $_time, int $_release_date , int $_vote)
+    function __construct($_name , Genres $_genre,  $_author, int $_time, int $_release_date , int $_vote)
     {
         $this->name = $_name;
+        $this->genre = $_genre;
         $this->author = $_author;
         $this->time = $_time;
         $this->release_date = $_release_date;
@@ -37,14 +38,5 @@ class Movie {
 
 }
 
-$movie_1 = new Movie ( 'Io robot' , 'Alex Proyas' , 115 , 2004 , 4 );
-$movie_1->setSuggestion((4));
-$suggestion_movie_1 = $movie_1->getSuggestion();
-$movie_1->setGenre("fantascienza, action");
-var_dump($movie_1);
-$movie_2 = new Movie ( 'Io sono leggenda' , 'Francis Lawrence' , 100 , 2007 , 3 );
-$movie_2->setSuggestion((3));
-$suggestion_movie_2 = $movie_2->getSuggestion();
-var_dump($movie_2);
 
 ?>

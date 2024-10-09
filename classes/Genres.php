@@ -1,7 +1,7 @@
 <?php
 
 class Genres {
-    protected $name;
+    public $name;
    
     function __construct(
         string $_name,
@@ -16,7 +16,7 @@ class Genres {
     
 
     public function setGenre($_name) : void {
-        if (!empty($_name) && mb_strlen($_name) > 2){
+        if (!empty($_name) && strlen($_name) > 2){
             $this->name = $_name;
         }
     }

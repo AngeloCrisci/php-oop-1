@@ -21,5 +21,59 @@ require __DIR__ . '/classes/Movies.php'
     </head>
 
 <body>
+    <?php
+        $action = new Genres ('action');
+        $horror = new Genres('horror');
+
+        $movie_1 = new Movie ( 'Io robot' , $action, 'Alex Proyas' , 115 , 2004 , 4 );
+        $movie_1->setSuggestion(($movie_1->vote));
+        $suggestion_movie_1 = $movie_1->getSuggestion();
+        $movie_2 = new Movie ( 'Io sono leggenda' , $horror , 'Francis Lawrence' , 100 , 2007 , 3 );
+        $movie_2->setSuggestion(($movie_2->vote));
+        $suggestion_movie_2 = $movie_2->getSuggestion();
+
+        $movies = [
+            $movie_1,
+            $movie_2,
+        ]
+?>
+
+    <h1 class="text-center">
+        I MIEI FILM OOP TRY
+    </h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <?php foreach($movies as $movie) { ?>
+            <div class="card col-4 h100">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <?=  $movie->name ?>
+                    </h5>
+                    <p class="card-text">
+                        Genere : <strong><?= $movie->genre->name ?></strong>
+                    </p>
+                    <p class="card-text">
+                       Autore: <strong><?= $movie->author ?></strong>
+                    </p>
+                    <p class="card-text">
+                       Voto: <strong><?= $movie->vote ?></strong>
+                    </p>
+                    <p class="card-text">
+                       Durata: <strong><?= $movie->time ?></strong>
+                    </p>
+                    <p class="card-text">
+                       Anno: <strong><?= $movie->release_date ?></strong>
+                    </p>
+                    <p class="card-text">
+                       Consigliato: <strong><?= $movie->suggestion ?></strong>
+                    </p>
+                </div>
+            </div>
+            
+            <?php } ?>
+        </div>
+    </div>
+
+
 </body>
 </html>
