@@ -4,7 +4,7 @@ class Genres {
     public $name;
    
     function __construct(
-        string $_name,
+         $_name,
     )
     {
         $this->name = $_name;

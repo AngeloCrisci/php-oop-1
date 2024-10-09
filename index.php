@@ -22,16 +22,30 @@ require __DIR__ . '/classes/Movies.php'
 
 <body>
     <?php
-        $action = new Genres ('action');
-        $horror = new Genres('horror');
+        $action =  ('Action');
+        $horror =  ('Horror');
+        $science = ('Science');
+        $comedy = ('Comedy');
+        $love_story = ('Love Story');
+    
+        $genres = [
+           $action,
+           $horror,
+           $science,
+           $comedy,
+           $love_story,
+        ];
 
-        $movie_1 = new Movie ( 'Io robot' , $action, 'Alex Proyas' , 115 , 2004 , 4 );
+       
+
+        $movie_1 = new Movie ( 'Io robot' , new Genres ($genres[2]. " " . $genres[0]) , 'Alex Proyas' , 115 , 2004 , 4 );
         $movie_1->setSuggestion(($movie_1->vote));
         $suggestion_movie_1 = $movie_1->getSuggestion();
-        $movie_2 = new Movie ( 'Io sono leggenda' , $horror , 'Francis Lawrence' , 100 , 2007 , 3 );
+        $movie_2 = new Movie ( 'Io sono leggenda' ,  new Genres ($genres[0] . " ". $genres[1] . " " . $genres[2]) , 'Francis Lawrence' , 100 , 2007 , 3 );
         $movie_2->setSuggestion(($movie_2->vote));
         $suggestion_movie_2 = $movie_2->getSuggestion();
 
+       
         $movies = [
             $movie_1,
             $movie_2,
