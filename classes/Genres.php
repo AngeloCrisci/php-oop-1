@@ -1,28 +1,27 @@
 <?php
 
 class Genre {
-    public $horror;
-    public $action;
-    public $science;
-    public $comedy;
-    public $love_story;
-
-    public function __construct(bool $horror , bool $action , bool $science , bool $comedy , bool $love_story)
+    protected $name;
+   
+    function __construct(
+        string $_name,
+    )
     {
-        $this->horror = $horror;
-        $this->action = $action;
-        $this->science = $science;
-        $this->comedy = $comedy;
-        $this->love_story = $love_story;
+        $this->name = $_name;
+    }
+    
+    public function getGenre() : string {
+            return $this->name;
+        }
+    
 
+    public function setGenre($_name) : void {
+        if (!empty($_name) && mb_strlen($_name) > 2){
+            $this->name = $_name;
+        }
     }
 
-
-
 }
-
-
-
 
 
 ?>
