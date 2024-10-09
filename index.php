@@ -1,4 +1,8 @@
+<?php
 
+require __DIR__ . '/classes/Movies.php'
+
+?>
 
 
 
