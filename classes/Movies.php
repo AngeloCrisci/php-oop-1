@@ -43,7 +43,6 @@ $movie_1->setSuggestion((4));
 $suggestion_movie_1 = $movie_1->getSuggestion();
 var_dump($movie_1);
 $movie_2 = new Movie ( 'Io sono leggenda' , 'horror' , 'Francis Lawrence' , 100 , 2007 , 3 );
-
 var_dump($movie_2);
 
 ?>
